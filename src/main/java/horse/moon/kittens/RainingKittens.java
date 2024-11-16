@@ -25,17 +25,17 @@ public class RainingKittens implements ModInitializer {
 			for (ServerWorld world : server.getWorlds()) {
 				world.getPlayers().forEach(player -> {
 					if (server.getTicks() % 5 == 0) {
-						MakeItRain(world, player.getBlockPos().add(0, 10, 0), 4);
+						MakeItRain(world, player.getBlockPos().add(0, 10, 0));
 					}
 				});
 			}
 		});
 	}
 
-	private void MakeItRain(ServerWorld world, BlockPos position, int maxNumber) {
+	private void MakeItRain(ServerWorld world, BlockPos position) {
 		var random = new Random();
 
-		for (var i = 0; i < Math.max(random.nextInt(maxNumber), 1); ++i) {
+		for (var i = 0; i < Math.max(random.nextInt(4), 1); ++i) {
 			EntityType.CAT.spawn(world, position.add(random.nextInt(4), 0, random.nextInt(4)), SpawnReason.COMMAND);
 		}
 	}
