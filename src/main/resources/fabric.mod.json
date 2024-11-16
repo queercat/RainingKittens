@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "raining-kittens",
+	"version": "1.0.0",
+	"name": "Raining Kittens",
+	"description": "Makes it rain cats lol.",
+	"authors": [
+		"Mayo"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/raining-kittens/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"horse.moon.kittens.RainingKittens"
+		],
+		"client": [
+			"horse.moon.kittens.RainingKittensClient"
+		]
+	},
+	"mixins": [
+		"raining-kittens.mixins.json",
+		{
+			"config": "raining-kittens.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
