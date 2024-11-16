@@ -8,8 +8,8 @@
 		"Mayo"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/queercat/RainingKittens",
+		"sources": "https://github.com/queercat/RainingKittens"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/raining-kittens/icon.png",
@@ -19,15 +19,9 @@
 			"horse.moon.kittens.RainingKittens"
 		],
 		"client": [
-			"horse.moon.kittens.RainingKittensClient"
 		]
 	},
 	"mixins": [
-		"raining-kittens.mixins.json",
-		{
-			"config": "raining-kittens.client.mixins.json",
-			"environment": "client"
-		}
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
@@ -36,6 +30,5 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
 	}
 }
