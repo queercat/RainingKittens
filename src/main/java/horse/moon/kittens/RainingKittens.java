@@ -5,7 +5,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
@@ -20,15 +19,13 @@ public class RainingKittens implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		LOGGER.info("Loaded RainingKittens!");
+
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			for (ServerWorld world : server.getWorlds()) {
 				world.getPlayers().forEach(player -> {
-					if (server.getTicks() % 20 == 0) {
+					if (server.getTicks() % 5 == 0) {
 						MakeItRain(world, player.getBlockPos().add(0, 10, 0), 4);
-					}
-
-					if (player.getAbilities().flying) {
-						world.spawnParticles(ParticleTypes.CLOUD, player.getX(), player.getY(), player.getZ(), 10, .5, .5, .5, .05);
 					}
 				});
 			}
